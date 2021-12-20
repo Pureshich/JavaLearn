@@ -6,24 +6,25 @@ public class Task1
 {
     public static void main(String[] args)
     {
+        Task1 application = new Task1();
         int[] array = new int[5];
-        FillArray(array);
-
+        application.fillArray(array);
+        application.printArray(array);
     }
-    public static void FillArray(int[] array)
+    public  int[] fillArray(int[] array)
     {
         Random rnd = new Random();
         for (int i=0; i <array.length; i++)
         {
-            array[i] = rnd.nextInt(100-10)+10;
+            array[i] = rnd.nextInt(90)+10;
         }
-        PrintArray(array);
+        return array;
     }
-    public  static void PrintArray(int[] array)
+    public  void printArray(int[] array)
     {
         for (int i=0; i <array.length; i++)
         {
-            System.out.print(array[i]);
+            System.out.print(array[i]+", ");
         }
     }
 }

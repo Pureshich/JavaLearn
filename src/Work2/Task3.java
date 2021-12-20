@@ -5,21 +5,23 @@ public class Task3
 {
     public static void main(String[] args)
     {
+        Task3 application = new Task3();
         int[] array = new int[5];
-        FillArray(array);
-        SeachMaxIntInArray(array);
-        SeachMinIntArray(array);
-        PrintArray(array);
+        application.fillArray(array);
+        application.searchMaxIntInArray(array);
+        application.searchMinIntArray(array);
+        application.PrintArray(array);
     }
-    public static void FillArray(int[] array)
+    public int[] fillArray(int[] array)
     {
         Random rnd = new Random();
         for (int i=0; i <array.length; i++)
         {
             array[i] = rnd.nextInt(100-10)-10;
         }
+        return array;
     }
-    public  static void PrintArray(int[] array)
+    public void PrintArray(int[] array)
     {
         for (int i=0; i <array.length; i++)
         {
@@ -27,7 +29,7 @@ public class Task3
         }
     }
 
-    public static  void SeachMaxIntInArray(int[] array)
+    public void searchMaxIntInArray(int[] array)
     {
         int maxInt = array[0];
         for (int i = 0;i < array.length;i++)
@@ -39,7 +41,7 @@ public class Task3
         }
         System.out.println("максимальное число: "+ maxInt);
     }
-    public static void SeachMinIntArray(int[] array)
+    public void searchMinIntArray(int[] array)
     {
         int minInt = array[0];
         for (int i = 0;i < array.length;i++)
