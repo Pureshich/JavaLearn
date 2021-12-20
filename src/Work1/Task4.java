@@ -4,7 +4,6 @@ public class Task4
 {
     public static void main(String[] args)
     {
-
         int sum= 0;
         for(int num =1000;num<2000;num++)//задаем диапазон от 1000 до 2000
         {

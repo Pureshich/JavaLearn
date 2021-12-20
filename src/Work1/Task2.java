@@ -11,19 +11,19 @@ public class Task2
             number++;
             int FirstThreeNum = number/1000;
             int LastThreeNum = number%1000;
-            int Fsum = 0;
-            int Lsum = 0;
+            int firstsum = 0;
+            int lastsum = 0;
             while (FirstThreeNum > 0)
             {
-                Fsum =  Fsum + FirstThreeNum % 10;
+                firstsum =  firstsum + FirstThreeNum % 10;
                 FirstThreeNum = FirstThreeNum / 10;
             }
             while (LastThreeNum > 0)
             {
-                Lsum =  Lsum + LastThreeNum % 10;
+                lastsum =  lastsum + LastThreeNum % 10;
                 LastThreeNum = LastThreeNum / 10;
             }
-            if(Fsum==Lsum)
+            if(firstsum==lastsum)
             {
                 sum = sum+number;
             }
