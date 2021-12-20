@@ -13,8 +13,6 @@ public class Task4
         Arrays.stream(array).map(Arrays::toString).forEach(System.out::println);
         System.out.println("\n");
         selectionSort2(array);
-        //System.out.println("\n");
-        //selectionSort(array);
     }
     public  static void  FillArray(int[][] array)
     {

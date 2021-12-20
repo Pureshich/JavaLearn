@@ -1,7 +1,6 @@
 package Work3;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class Task2
 {
@@ -21,7 +20,6 @@ public class Task2
             {
                 array[i][o]=(int)(Math.random()*10);
             }
-
         }
     }
     public static void SumBollard(int[][]array)

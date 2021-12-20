@@ -18,7 +18,7 @@ public class Task3
     }
     public  static void  FillArray(int[][] array)
     {
-            /*array[0][0]=2;
+            /*array[0][0]=2;//для проверки заполним массив магическим квадратом
             array[0][1]=7;
             array[0][2]=6;
 

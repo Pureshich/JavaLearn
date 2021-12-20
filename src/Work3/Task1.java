@@ -1,7 +1,6 @@
 package Work3;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class Task1
 {
@@ -21,7 +20,6 @@ public class Task1
             {
                 array[i][o]=(int)(Math.random()*10);
             }
-
         }
     }
     public static void Sum(int[][]array)
