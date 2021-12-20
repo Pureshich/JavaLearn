@@ -1,22 +1,20 @@
 package Work3;
 
-import java.util.Arrays;
-
 public class Task3
 {
     public static int sumVertical=0,sumHorizontal=0,sumDiagonal=0;
     public static void main(String[] args)
     {
+        Task3 application = new Task3();
         int[][] array = new int[3][3];
-        FillArray(array);
-        System.out.println("Наш массив:");
-        Arrays.stream(array).map(Arrays::toString).forEach(System.out::println);
-        SumBollard(array);
-        Sum(array);
-        SumDiagonal(array);
-        Compare( sumVertical, sumHorizontal,array);
+        application.fillArray(array);
+        application.printArray(array);
+        application.SumBollard(array);
+        application.Sum(array);
+        application.SumDiagonal(array);
+        application.Compare( sumVertical, sumHorizontal,array);
     }
-    public  static void  FillArray(int[][] array)
+    public  int[][]  fillArray(int[][] array)
     {
             /*array[0][0]=2;//для проверки заполним массив магическим квадратом
             array[0][1]=7;
@@ -36,10 +34,23 @@ public class Task3
                     array[i][o]=(int)(Math.random()*10);
                 }
             }
+            return array;
     }
-    public static void SumBollard(int[][]array)//высчитываем сумму столбцов
+    public void printArray(int [][] array)
     {
-        //int sumVertical = 0;
+        System.out.println("Наш массив:");
+        for(int i = 0; i < array.length; i++)
+        {
+            for(int j = 0; j < array.length; j++)
+            {
+                System.out.printf("%2d ", array[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("");
+    }
+    public int SumBollard(int[][]array)//высчитываем сумму столбцов
+    {
         for(int o=0; o<array[0].length;o++)
         {
             for (int i = 0; i < array.length; i++)
@@ -47,8 +58,9 @@ public class Task3
                 sumVertical += array[i][o];
             }
         }
+        return sumVertical;
     }
-    public static void Sum(int[][]array)//высчитываем сумму строк
+    public int Sum(int[][]array)//высчитываем сумму строк
     {
         //int sumHorizontal = 0;
         for (int i=0; i <array.length; i++)
@@ -58,8 +70,9 @@ public class Task3
                 sumHorizontal += array[i][o];
             }
         }
+        return sumHorizontal;
     }
-    public static void SumDiagonal(int[][] array)//смотрим диагонали
+    public int SumDiagonal(int[][] array)//смотрим диагонали
     {
         int sum=0;
         for (int i =0,j=0; i<array.length;i++)//проверяем  слева направо
@@ -67,7 +80,6 @@ public class Task3
             if(j<array[i].length)
             {
                 sumDiagonal += array[i][j];
-                //System.out.printf(sumDiagonal+"\n");
                 j++;
             }
         }
@@ -83,9 +95,9 @@ public class Task3
         {
             sumDiagonal=0;
         }
-
+        return sumDiagonal;
     }
-    public static void Compare(int sumVertical, int sumHorizontal, int[][]array)//равниваем сумму столбцов и строк
+    public void Compare(int sumVertical, int sumHorizontal, int[][]array)//равниваем сумму столбцов и строк
     {
         if(sumHorizontal/array.length == sumVertical/array.length && sumHorizontal/array.length==sumDiagonal)
         {

@@ -1,20 +1,18 @@
 package Work3;
 
-import java.util.Arrays;
-
 public class Task4
 {
     public static void main(String[] args)
     {
+        Task4 application = new Task4();
         int[][] array = new int[10][10];
-        FillArray(array);
-        System.out.println("Наш массив:");
-
-        Arrays.stream(array).map(Arrays::toString).forEach(System.out::println);
-        System.out.println("\n");
-        selectionSort2(array);
+        application.fillArray(array);
+        application.printArray(array);
+        application.selectionSort(array);
+        application.printArray(array);
     }
-    public  static void  FillArray(int[][] array)
+
+    public  int[][]  fillArray(int[][] array)
     {
         for (int i=0; i <array.length; i++)
         {
@@ -23,18 +21,32 @@ public class Task4
                 array[i][o]=(int)(Math.random()*10);
             }
         }
+        return array;
     }
-    public static void selectionSort2(int[][] array)
+    public void printArray(int [][] array)
     {
-        for (int i = 0; i < array.length; i++) {
-            for (int k = 0; k < array.length; k++) {
-                int min1 = i;
-                int min2 = k;
-                for (int j = i; j < array.length; j++)
+        System.out.println("массив:");
+        for(int i = 0; i < array.length; i++)
+        {
+            for(int j = 0; j < array.length; j++)
+            {
+                System.out.printf("%2d ", array[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("");
+    }
+    public int[][] selectionSort(int[][] array)
+    {
+        for (int w = 0; w < array.length; w++) {
+            for (int h = 0; h < array.length; h++) {
+                int min1 = w;
+                int min2 = h;
+                for (int j = w; j < array.length; j++)
                 {
-                    if ( j == i )
+                    if ( j == w )
                     {
-                        for (int l = k; l < array.length; l++)
+                        for (int l = h; l < array.length; l++)
                         {
                             if (array[j][l] < array[min1][min2])
                             {
@@ -55,17 +67,11 @@ public class Task4
                         }
                     }
                 }
-                int swap = array[i][k];
-                array[i][k] = array[min1][min2];
-                array[min1][min2] = swap;
+                int change = array[w][h];
+                array[w][h] = array[min1][min2];
+                array[min1][min2] = change;
             }
-            System.out.println(Arrays.toString(array[i]));
         }
-    }
-    private static void swap(int[] array, int ind1, int ind2)
-    {
-        int tmp = array[ind1];
-        array[ind1] = array[ind2];
-        array[ind2] = tmp;
+        return array;
     }
 }
