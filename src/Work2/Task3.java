@@ -1,7 +1,6 @@
 package Work2;
 
 import java.util.Random;
-
 public class Task3
 {
     public static void main(String[] args)

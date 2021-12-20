@@ -12,7 +12,6 @@ public class Task5
         FillArray(array);
         PrintArray(array);//выодим изначальный массив(для проверки)
         SeachMaxMinIntInArray(array, maxInt, minInt);
-
     }
     public static void FillArray(int[] array)
     {

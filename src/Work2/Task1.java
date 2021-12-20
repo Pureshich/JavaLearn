@@ -8,6 +8,7 @@ public class Task1
     {
         int[] array = new int[5];
         FillArray(array);
+
     }
     public static void FillArray(int[] array)
     {

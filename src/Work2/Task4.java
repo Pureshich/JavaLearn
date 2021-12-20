@@ -12,7 +12,6 @@ public class Task4
         FillArray(array);
         PrintArray(array);//выодим изначальный массив(для проверки)
         SeachMaxMinIntInArray(array, maxInt, minInt);
-
     }
     public static void FillArray(int[] array)
     {
@@ -27,7 +26,6 @@ public class Task4
         for (int i=0; i <array.length; i++)
         {
             System.out.print(array[i]+", ");
-
         }
         System.out.println("");
     }
@@ -41,7 +39,6 @@ public class Task4
             {
                 MaxIinArray = i;
                 maxInt=array[i];
-
             }
         }
         System.out.println("максимальное число: "+ maxInt);

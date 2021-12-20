@@ -18,6 +18,7 @@ public class Task2
         {
             array[i] = rnd.nextInt(101)-50;
             //System.out.print(array[i]+", ");
+
         }
     }
     public  static void PrintArray(int[] array)
