@@ -6,53 +6,49 @@ public class Task6
 {
     public static void main(String[] args)
     {
+        Task6 application = new Task6();
         Scanner sr = new Scanner(System.in);
-        String text=sr.next();
-        String[] chars= new String[10];
-        chars[0]=text;
-        //sorting(chars);
-        for (int i = 1; i<text.length(); i++)
+        int num=0;
+        System.out.print("кол-во строк: ");
+        num=sr.nextInt();
+        String[] array = new String[num];
+        for(int i =0;i<array.length;i++)
         {
-            chars[i] = sr.next(); // Заполняем массив элементами, введёнными с клавиатуры
-            //System.out.println(chars[0]);
+            System.out.print("Введите строку: ");
+            array[i]=sr.next();
         }
-        sorting(chars, sr);
-        System.out.print(chars[1].charAt(2));
+        String wishlist=" ";
+        application.sorting(array,wishlist);
     }
-    public  static void sorting(String[] chars,Scanner sr)
-    {
 
-       /* for (int k = 0; k < chars.length; k++)
-        {
-            str_1 = "";
-            sr = chars[k];
-            str_1 += sr.charAt(0);
-            for (int i = 1; i < sr.length(); i++)
-            {
-                for (int j = 0; j < sr_1.length(); j++)
-                {
-                    if(str_1.charAt(j) == sr.charAt(i))
-                    {
-                    score += 1;
+    public void sorting(String[] array,String wishlist)
+    {
+        String answer="";
+        boolean ok=true;
+        String bestString="";
+        for (String s : array) {
+            for (int i = 0; i < s.length(); i++) {
+                for (int j = 0; j < wishlist.length(); j++) {
+                    if (s.charAt(i) != wishlist.charAt(j)) {
+                        ok = true;
+                    } else {
+                        ok = false;
+                        break;
                     }
                 }
-                    if (score == 0)
-                    {
-                        str_1 += str.charAt(i);
-                        score_1 += 1;
-                    }
-                    else
-                    {
-                        score = 0;
-                    }
+                if (ok) {
+                    answer += s.charAt(i);
+                    wishlist += s.charAt(i);
+                }
             }
-                if (max < score_1)
-                {
-                    max = score_1;
-                    num = k;
-                }
+            if (answer.length() > bestString.length()) {
+                bestString = answer;
+                wishlist = " ";
+                answer = "";
+            }
         }
-            System.out.println(chars[num]);*/
+        System.out.println(bestString);
     }
 }
+
 

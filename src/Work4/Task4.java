@@ -6,11 +6,12 @@ public class Task4
 {
     public static void main(String[] args)
     {
+        Task4 application = new Task4();
         Scanner sr = new Scanner(System.in);
         String text=sr.next();
-        sorting(text);
+        application.sorting(text);
     }
-    public  static void sorting(String text)
+    public void sorting(String text)
     {
         int sum=0;
         for(int i=0;i<text.length();i ++)

@@ -7,14 +7,31 @@ public class Task3
 {
     public static void main(String[] args)
     {
+        Task3 application = new Task3();
         Scanner sr = new Scanner(System.in);
         String text=sr.next();
-        sorting(text);
+        application.scanning(text);
+        int num;
+        num=scanning(text);//присваиваем к значению num переменную count
+        char[] array = new char[num];//создаем массив длиной num
+        application.sorting(text,array);
     }
-    public  static void sorting(String text)
+
+    static int scanning(String text)
+    {
+        int count=0;
+        for(int i=0;i<text.length();i ++)
+        {
+            if (Character.isDigit(text.charAt(i)))
+            {
+                count++;
+            }
+        }
+        return count;
+    }
+    public void sorting(String text, char[] array)
     {
         int g=0;
-        char[] array=new char[text.length()];
         for(int i=0;i<text.length();i ++)
         {
             if (Character.isDigit(text.charAt(i)))

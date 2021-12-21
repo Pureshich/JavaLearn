@@ -27,6 +27,6 @@ public class Task4
                 sum=sum + num;
             }
         }
-        System.out.print(sum);
+        System.out.print("сумма всех простых чисел в диапазоне от 1000 до 2000: "+sum);
     }
 }

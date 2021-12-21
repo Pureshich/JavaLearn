@@ -6,11 +6,12 @@ public class Task1
 {
     public static void main(String[] args)
     {
+        Task1 application = new Task1();
         Scanner sr = new Scanner(System.in);
         String text=sr.next();
-        sorting(text);
+        application.sorting(text);
     }
-    public  static void sorting(String text)
+    public void sorting(String text)
     {
         int num=0;
         while (num <= text.length())

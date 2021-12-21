@@ -6,28 +6,37 @@ public class Task5
 {
     public static void main(String[] args)
     {
+        Task5 application = new Task5();
         Scanner sr = new Scanner(System.in);
-        String text,txt="";
+        String text;
         text = sr.next();
-        txt += text.charAt(0);
-        sorting(text,txt);
+        String wishlist=" ";
+        application.sorting(text,wishlist);
     }
-    public  static void sorting(String text,String txt)
+    public void sorting(String text,String wishlist)
     {
-        int score=0;
-        for (int i = 1; i < text.length(); i++) {
-            for (int j = 0; j < txt.length(); j++) {
-                if (txt.charAt(j) == text.charAt(i)) {
-                    score += 1;
+        String answer="";
+        boolean ok=true;
+        for(int i=0;i<text.length();i++)
+        {
+            for(int j=0;j<wishlist.length();j++)
+            {
+                if(text.charAt(i)!=wishlist.charAt(j))
+                {
+                    ok = true;
+                }
+                else
+                {
+                    ok=false;
+                    break;
                 }
             }
-            if (score == 0) {
-                txt += text.charAt(i);
-            }
-            else {
-                score = 0;
+            if(ok == true)
+            {
+                answer += text.charAt(i);
+                wishlist+=text.charAt(i);
             }
         }
-        System.out.println(txt);
+        System.out.println(answer);
     }
 }
