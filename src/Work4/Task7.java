@@ -2,23 +2,55 @@ package Work4;
 
 import java.util.Scanner;
 
-public class Task6
+public class Task7
 {
     public static void main(String[] args)
     {
-        Task6 application = new Task6();
+        Task7 application = new Task7();
         Scanner sr = new Scanner(System.in);
-        int num=0;
-        System.out.print("кол-во строк: ");
-        num=sr.nextInt();
-        String[] array = new String[num];
-        for(int i =0;i<array.length;i++)
-        {
-            System.out.print("Введите строку: ");
-            array[i]=sr.next();
-        }
+
+        String [] array;
+        String text;
+        System.out.print("Введите предложение: ");
+        text = sr.nextLine();
+
+        int wordCount = 0;
         String wishlist=" ";
+
+        for(int i =0; i < text.length(); i++)
+        {
+            if(!Character.isSpaceChar(text.charAt(i)))
+            {
+
+                wordCount++;
+            }
+        }
+        array = new String[wordCount];
+
+        application.enter(array,text);
         application.sorting(array,wishlist);
+    }
+    public String[] enter(String[] array,String text)
+    {
+        int i=-1;
+        for(int k =0;k<array.length;k++)
+        {
+            array[k]="";
+            i++;
+            for (; i < text.length(); i++)
+            {
+                if(!Character.isSpaceChar(text.charAt(i)))
+                {
+
+                    array[k]+=text.charAt(i);
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        return array;
     }
 
     public void sorting(String[] array,String wishlist)
