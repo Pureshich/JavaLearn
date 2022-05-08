@@ -29,6 +29,8 @@ public class Task1Test {//ветления и циклы
     void Work1Task3Check() {
         boolean actual = Work1task3.intCheck(3,false);
         assertTrue(actual);
+        actual =Work1task3.intCheck(34,false);
+        assertTrue(actual);
     }
 
 }

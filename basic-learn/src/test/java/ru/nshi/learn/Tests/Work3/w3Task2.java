@@ -6,12 +6,12 @@ public class w3Task2
     {
         w3Task2 application = new w3Task2();
         int[][] array = new int[10][10];
-        int[] sumArray= new int[10];
+        int[] resultArray= new int[10];
         application.fillArray(array);
         application.printArray(array);
 
-        application.SumBollard(array,sumArray);
-        application.printSumArray(sumArray);
+        application.SumColumns(array,resultArray);
+        application.printResultArray(resultArray);
     }
     public  int[][] fillArray(int[][] array)
     {
@@ -37,16 +37,16 @@ public class w3Task2
         }
         System.out.println("");
     }
-    public void printSumArray(int[] sumArray)
+    public void printResultArray(int[] resultArray)
     {
         System.out.print("[ ");
-        for (int i=0; i <sumArray.length; i++)
+        for (int i=0; i <resultArray.length; i++)
         {
-            System.out.print(sumArray[i]+", ");
+            System.out.print(resultArray[i]+", ");
         }
         System.out.print("]"+"\n");
     }
-    public int[] SumBollard(int[][]array,int[] sumArray)
+    public int[] SumColumns(int[][]array,int[] sumArray)
     {
         int sum = 0;
         for (int i =0; i < array[0].length; i++)
