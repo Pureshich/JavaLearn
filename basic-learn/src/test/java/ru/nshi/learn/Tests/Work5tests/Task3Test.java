@@ -6,7 +6,8 @@ import ru.nshi.learn.Tests.Work4.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Task3Test {//Двумерные массивы
+public class Task3Test //Двумерные массивы
+{
 
     w4Task1 Work4task1;
     w4Task2 Work4task2;
@@ -33,6 +34,7 @@ public class Task3Test {//Двумерные массивы
         String[] array = new String[text.length()];
         String[] actual = new String[]{"q","qw","qwe","qwer","qwert"};
         Work4task1.sorting(text,array);
+        Work4task1.printArray(array);
         assertArrayEquals(array,actual);
     }
     @Test

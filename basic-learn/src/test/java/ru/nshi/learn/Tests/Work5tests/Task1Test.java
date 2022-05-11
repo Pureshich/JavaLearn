@@ -8,8 +8,8 @@ import ru.nshi.learn.Tests.Work1.Task3;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Task1Test {//ветления и циклы
-
+public class Task1Test //ветления и циклы
+{
     Task1 Work1task1;
     Task3 Work1task3;
     @BeforeEach
@@ -29,7 +29,7 @@ public class Task1Test {//ветления и циклы
     void Work1Task3Check() {
         boolean actual = Work1task3.intCheck(3,false);
         assertTrue(actual);
-        actual =Work1task3.intCheck(34,false);
+        actual =Work1task3.intCheck(3,false);
         assertTrue(actual);
     }
 

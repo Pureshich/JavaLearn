@@ -17,14 +17,17 @@ public class w4Task1
     {
         for (int k=0 ; k < text.length();k++)
         {
-            for(int i=0;i<k;i ++)
+            array[k]="";
+            for(int i=0;i<k;i++)
             {
                 System.out.print(text.charAt(i));
-                array[i]+=text.charAt(i);
+                array[k-1]+=text.charAt(i);
+                System.out.print(array[k]+", ");
             }
 
             System.out.println("\n");
         }
+        array[array.length-1]=text;
     }
     public  void printArray(String[] array)
     {

@@ -6,7 +6,8 @@ import ru.nshi.learn.Tests.Work3.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Task2Test {//Двумерные массивы
+public class Task2Test //Двумерные массивы
+{
 
     w3Task1 Work3task1;
     w3Task2 Work3task2;
