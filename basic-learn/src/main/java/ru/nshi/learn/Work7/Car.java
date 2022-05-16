@@ -8,7 +8,7 @@ public class Car
     private CarMaker carMaker;
     private String modelYear;
     private String color;
-    //static Set<CarMaker> makersSet = new HashSet<CarMaker>();
+    static Set<CarMaker> makersSet = new HashSet<CarMaker>();
     @Override
     public String toString() {
         return this.carModel + ", "
@@ -23,9 +23,11 @@ public class Car
         car.setCarMaker(new CarMaker(values[1]));
         car.setModelYear(values[2]);
         car.setColor(values[3]);
+        makersSet.add(new CarMaker(values[1]));
+        car.carMaker = makersSet.stream()
+            .filter( Cmaker -> Cmaker.getCarMakerName().equals(values[1]) )
+            .findAny().get();
         car.carMaker.getCars().add(car);
-
-
         return car;
 
 

@@ -27,11 +27,11 @@ public class Reader
         listSortingFile(carMakersList);//(7)
         carMakersList.forEach( carMake -> System.out.println(carMake.getCars()));//(7)
 
-        Set<CarMaker> elements = new HashSet<CarMaker>();
-        carMakersList.stream()
-            .filter(e -> !elements.add(e))
-            .collect(Collectors.toSet());
-        carSortingFile(elements);
+        List<CarMaker> sortMakers = carMakersList.stream()
+            .filter(Cmaker -> Cmaker.getCars().size() > 2)
+            .sorted(Comparator.comparing(Cmaker -> Cmaker.getCarMakerName()))
+            .collect(Collectors.toList());
+        carSortingFile(sortMakers);
     }
     private static BufferedReader getReader() throws IOException {
         URL url = new URL(Reader.URL);
@@ -99,7 +99,8 @@ public class Reader
             System.out.println(exc);
         }
     }
-    private static void carSortingFile(Set<CarMaker> elemets)
+
+    private static void carSortingFile(List <CarMaker> elemets)
     {
         try (FileWriter fw = new FileWriter(folderPach+"CarSorting(8).txt")) {
             for (CarMaker maker : elemets)
